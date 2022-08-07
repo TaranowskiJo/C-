@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="~/css/styles.css">
+
+<h1> Survey Time </h1>
+
+<body class="bg-pink text-light">
+    <h3>Dojo Survey</h3>
+
+
+    <form method="post" action= "formResults">
+
+            <div>
+                <label form="yourName">Your Name:</label>
+                <input type="text" name="yourName" value="" />
+            </div>
+        <br>
+            <div>
+                <label form="dojoLocation">Dojo Location:</label>
+                    <select name="dojoLocation" id="dojoLocation">
+                    <option value="Bellevue"> Bellevue</option>
+                    <option value="Sanfran"> Sanfran</option>
+                    <option value="Austraia"> Australia</option>
+                    <option value="myBackyard">My Backyard</option>
+                </select>
+            </div>
+        <br>
+            <div>
+                <label form="favoriteLanguage">Favorite Language:</label>
+                    <select name="favoriteLanguage" id="favLanguage">
+                        <option value="Python"> Python</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                    </select>
+            </div>
+        <br>
+            <div>
+                <textarea id="comments" name="comments" rows="4" cols="50">
+                </textarea>
+            </div>
+        <br>
+            <div>
+                <input type="submit" value="Submit" class="submit" formaction@Results.Action("Submit") formmethod="post"/>
+            </div>
+
+    </form>
+</body>
+
+@* <a href="/videos">Videos</a> *@
+
+
+
+@*
+
+    @{
+    List<int> ints = new List<int>(){
+    1,2,3,5,6,7,8
+    };
+
+    foreach (int num in ints)
+    {
+    <p>@num</p>
+    };
+
+    string helloHi = "Hellooooo";
+    <p>@helloHi</p>
+    }
+*@
