@@ -55,6 +55,93 @@ class BinarySearchTree {
             }
         }
     }
+    
+     */
+class BinarySearchTree {
+    constructor() {
+    /**
+       * Just like the head of a linked list, this is the start of our tree which
+       * branches downward from here.
+       *
+       * @type {BSTNode|null}
+       */
+    this.root = null;
+    }
+
+    /**
+     * Determines if this tree is empty.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {boolean} Indicates if this tree is empty.
+     */
+    isEmpty() {
+        return this.root == null //!one if statement can be retuurned true/false
+    }
+
+    insert(data){
+        if(this.root.data < data){
+            while(this.left != null){
+
+            }
+        }
+    }
+
+    insert(newVal) {
+        let newNode = new BSTNode(newVal);
+        let current = this.root;
+        if (this.root == null){
+            this. root == newVal;
+            return this;
+        }
+        while(current){
+        if (newVal == current.data){
+            return undefined;
+        } 
+        if (newVal > current.data) {
+            current.left = newNode;
+            return this;
+        } 
+        if (newVal > current.data ) {
+            current.right = newNode;
+            return this;
+        }
+        }
+    return false;
+
+    }
+
+    /**
+     * Inserts a new node with the given newVal in the right place to preserver
+     * the order of this tree.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {number} newVal The data to be added to a new node.
+     * @param {Node} curr The node that is currently accessed from the tree as
+     *    the tree is being traversed.
+     * @returns {BinarySearchTree} This tree.
+     */
+    insertRecursive(newVal, curr = this.root) {
+        let newNode = new BSTNode(newVal);
+        if (this.isEmpty()){
+            this.root = newNode;
+            return this;
+        }
+        if (!curr.left && curr.data > newVal){
+            curr.left = newNode;
+            return this;
+        }
+        else if (!curr.right && curr.data < newVal){
+            curr.right = newNode;
+            return this;
+        }
+        else if(curr.data < newVal && curr.right){
+            return this.insertRecursive(newVal, curr = curr.right);
+        }
+        else if (curr.data > newVal && curr.left){
+            return this.insertRecursive(newVal, curr = curr.left);
+        }
+        return this;
+    }
 
     contains(searchVal) { 
         if (this.isEmpty()){
