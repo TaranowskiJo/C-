@@ -86,6 +86,28 @@ class BinarySearchTree {
         }
     }
     
+    toArrLevelorder(current = this.root, vals = []) {
+        const queue = [];
+        const vals = [];
+
+        if(current)
+        {
+            queue.push(current)
+        }
+        while (queue.length > 0){
+            const dequeNode = queue.shift()
+            vals.push(dequeNode.data)
+
+            if (dequeNode.left){
+                queue.push(dequeNode.left)
+            }
+            if (dequeNode.right) {
+                queue. push(dequeNode.right)
+            }
+        }
+        return vals        
+    }
+    
         toArrPreorder(node = this.root, vals = []) {
         if(this.isEmpty()){
             return vals;
